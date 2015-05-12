@@ -5,6 +5,8 @@
  * Date: 10-May-15
  * Time: 2:16 PM
  */
+
+session_start();
 include("connect.php");
 $user=$_REQUEST["name"];
 $usernm=$_REQUEST["Username"];
