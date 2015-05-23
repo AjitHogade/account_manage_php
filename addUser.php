@@ -7,30 +7,63 @@
  */
 
 session_start();
-include("connect.php");
+
 $user=$_REQUEST["name"];
 $usernm=$_REQUEST["Username"];
 $passwr=$_REQUEST["Password"];
 $cpasswr=$_REQUEST["confirmPassword"];
+$input = array();
+$error = array();
+$success = "User has been Registered successfully";
 
-if(!$_POST["name"] || !$_POST["Password"] || !$_POST["Username"] || !$_POST["confirmPassword"])
-{
-$msg = "You left one or more of the required fields.";
-header("Location:http://localhost/register.php?msg=$msg");
+if(empty($user)){
+$error['name'] = "Your Name must not be empty<br>";
+}else{
+  $input['name'] = $user;
 }
-     
-if($passwr == $cpasswr){
-	$hash=crypt($passwr);
-$sql = "INSERT INTO users (Name, username, password)
+
+if(empty($usernm)){
+$error['Username'] = "Username should not be empty<br>";
+}else{
+  $input['Username'] = $usernm;
+}
+
+if(empty($passwr)){
+$error['Password'] = "password should not be empty<br>";
+echo $error['Password'];
+}else{
+  $input['Password'] = $passwr;
+}
+
+if(empty($cpasswr)){
+$error['confirmPassword'] = "Renter password<br>";
+}
+
+if($passwr != $cpasswr){
+$error['cpass'] = "Should match with Password<br>";
+}
+
+if($error == 0 || $error == null){
+  //session_destroy();
+
+include("connect.php");
+
+	$hash=md5($passwr);
+$sql = "INSERT INTO users (name, user_name, password)
 VALUES ('$user','$usernm','$hash')";
+echo "New record created successfully";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+   // echo "New record created successfully";
+   $_SESSION["success"] = $success;
+  header("location:register.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 }
-    else{
-    	echo "confirmpassword is invalid";
-    }
-
+else{
+    $_SESSION["input"] = $input;
+    $_SESSION["error"]=$error;
+header("location:register.php");
+    
+}
 ?>

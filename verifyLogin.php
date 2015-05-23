@@ -1,19 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Verfication</title>
+
+</head>
+<body>
 <?php
-include("connect.php");
+session_start();
+include ("connect.php");
+//$user=$_REQUEST["username"];
+
 if(isset($_REQUEST['username']) and  isset($_REQUEST['password'])) {
 
 $user=$_REQUEST["username"];
 $pass = $_REQUEST["password"];
+$hash= md5($pass);
+$error ="user invalid";
 
-
-$sql="SELECT * FROM users WHERE user_name ='$user' and password = '$pass'";
-	
+$sql="SELECT * FROM users WHERE user_name ='$user' and password = '$hash'";
 $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-if ($result->num_rows == true){
 
+
+if ($result->num_rows == true)
+{
 $row = $result->fetch_array();
-
-}else{
+}
+else
+{
 	$row = false;
 }
 
@@ -25,7 +39,9 @@ if($row == true)
 
 }
 else{
-	echo "invalid User-name or Password";
+         $_SESSION['error'] = $hash;
+         header('location:login.php');
+	//echo "invalid User-name or Password";
 }
 }
 

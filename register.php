@@ -1,29 +1,9 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> f10e19f59ac5902040b138a5a7b4707b26204b91
-
-
-
 <?php
-// Start the session
 session_start();
 ?>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" media="all" />
- <script>
-   /*  function formValidate() {
-         var x = document.forms["contact form"]["name"].value;
-         if (x == null || x == " ") {
-             alert("name should be filled");
-             return false;
-         }
-     else {
-             return true;
-         }
-     }
-  </script>
     </head>
 <body>
 <header>
@@ -32,7 +12,7 @@ session_start();
             <div style = "color:white;padding:10px">
                 <h3>Personal-Records<h3></div>
             <div style = "color:white;margin-top:-40px;margin-right:10px;float:right">
-                <a href="login.php">Login</a></div></nav>
+                <a href="login.php" style="color:white">Login</a></div></nav>
 </header></br>
 <form name="contact form" method="post" action="addUser.php">
 
@@ -44,36 +24,41 @@ session_start();
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
 
-                        <div class="input-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<input type="text" class = "form-control" name= "name" id="name" placeholder="Name" reuired=""></div>
-    <br>
-                        <div class="input-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1">User-Name</span>
-    <input type="text"class = "form-control" name="Username" id="username" placeholder="Username" reuired=""></div>
-    <br>
-                        <div class="input-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1">Password&nbsp;&nbsp;&nbsp;</span>
-<input type="password" class = "form-control" name= "Password" id="password" placeholder="Enter Password"reuired=""></div>
- <br>
-                        <div class="input-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1">ConfirmPassword&nbsp;&nbsp;&nbsp;</span>
-<input type="password" class="form-control" name= "confirmPassword" id="confirmpassword" placeholder="Re-enter Password" reuired=""></div>
- <br>
 
+     <table class="table">
+    <thead>
+      <tr>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h4>Name:</h4></td>
+        <td><input type="text" class = "form-control" name= "name" id="name" placeholder="Name" value = '<?php if(isset($_SESSION["input"]['name'])) {echo $_SESSION['input']['name']; }else{echo "";} ?>'>
+    <?php if(isset($_SESSION["error"]['name'])) {echo $_SESSION['error']['name'] ;}?></td>
+      </tr>
+      <tr>
+        <td><h4>User-Name:</h4></td>
+        <td><input type="text" class = "form-control" name="Username" id="username" placeholder="Username" value = '<?php if(isset($_SESSION["input"]['Username'])) {echo $_SESSION['input']['Username']; } ?>'>
+    <?php if(isset($_SESSION["error"]['Username'])) {echo $_SESSION['error']['Username'] ;}?></td>
+      </tr>
+      <tr>
+        <td><h4>Password:</h4></td>
+        <td><input type="password" class = "form-control" name= "Password" id="password" placeholder="Enter Password"  value = '<?php if(isset($_SESSION["input"]['Password'])) {echo $_SESSION['input']['Password']; } ?>'>
+ <?php if(isset($_SESSION["error"]['Password'])) {echo $_SESSION['error']['Password'] ;}?> </td>
+      </tr>
+      <tr>
+        <td><h4>Confirm-Password:</h4></td>
+        <td><input type="password" class="form-control" name= "confirmPassword" id="confirmpassword" placeholder="Re-enter Password" reuired="">
+ <?php if(isset($_SESSION["error"]['cpass'])) {?><div class = "panel panel-danger"><div style="color:red"><?php echo $_SESSION['error']['cpass'] ;}?></div></div></td>
+      </tr>
+    </tbody>
+  </table>                                       
 <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
  <br>
-<br></div></div></div></div></div>
-
+ 
+</div></div><div class = "panel panel-success"><?php if(isset($_SESSION["success"])) {echo $_SESSION['success'];}?></div></div></div></div>
+<?php session_destroy(); ?>
 </form>
-<?php if(isset($_SESSION['msg']))
-  echo $_SESSION['msg'];
-  session_unset();
-  session_destroy();
-  ?>()
 </body>
 </html>
-<<<<<<< HEAD
-=======
-
->>>>>>> f10e19f59ac5902040b138a5a7b4707b26204b91

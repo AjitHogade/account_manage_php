@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
 <title>Login</title>
@@ -43,9 +44,11 @@
  </div>
  </div>
 </div>
+<?php if(isset($_SESSION['error'])) {echo $_SESSION['error'];}    ?>
 </div>      
 </div>
  <!--<?php //include("footer.php") ?>--> 
 
 </body>
 </html>
+<?php session_destroy() ?>
