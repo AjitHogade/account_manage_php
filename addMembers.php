@@ -21,37 +21,39 @@ if (!isset($_SESSION['username']))
 <div class="panel panel-default" style = "min-height:75%">    
       <h3><center>Register New Member</center></h3>
       <div class = "panel panel-default" style="margin-right:15px;margin-left:15px">
+        <form method="post" action="memberAddition.php">
        <table class="table">
     <thead>
       <tr>
-       
       </tr>
     </thead>
     <tbody>
+
+      
       <tr>
         <td style="width:25%"><h4>Full-Name:</h4></td>
-        <td><input type="text" class = "form-control" name= "name" id="name" placeholder="full name">
+        <td><input type="text" class = "form-control" name= "fullname" id="name" placeholder="full name">
    </tr>
       <tr>
         <td><h4>Email-Address:</h4></td>
-        <td><input type="text" class = "form-control" name="Username" id="username" placeholder="email address">
+        <td><input type="text" class = "form-control" name="emailadd" id="username" placeholder="email address">
     </tr>
       <tr>
         <td><h4>Flat-No:</h4></td>
-        <td><input type="text" class = "form-control" name= "Password" id="" placeholder="flat number" >
+        <td><input type="text" class = "form-control" name= "flatno" id="" placeholder="flat number" >
 </tr>
       <tr>
         <td><h4>Wing/Building-Name:</h4></td>
-        <td><input type="text" class="form-control" name= "confirmPassword" id="" placeholder="wing or building name" reuired="">
+        <td><input type="text" class="form-control" name= "wing" id="" placeholder="wing or building name" reuired="">
  </tr>
   <tr>
         <td><h4>Mobile-No:</h4></td>
-        <td><input type="text" class="form-control" name= "confirmPassword" id="confirmpassword" placeholder="mobile number" reuired="" value="+91">
+        <td><input type="text" class="form-control" name= "mobileno" id="confirmpassword" placeholder="mobile number" reuired="" value="+91">
  </tr>
   <tr>
         <td><h4>Flat-Area(Sqr-Feet):</h4></td>
         <td><div class="input-group">
-      <input type="text" class="form-control" placeholder="flat area">
+      <input type="text" class="form-control" name="flatarea" placeholder="flat area">
       <span class="input-group-btn">
         <button class="btn btn-success" type="button">Calculate-Amount</button>
       </span>
@@ -59,8 +61,18 @@ if (!isset($_SESSION['username']))
  </tr>
   <tr>
         <td><h4>Maitainance-Amount:</h4></td>
-        <td><input type="text" class="form-control" name= "confirmPassword" id="confirmpassword" placeholder="amount to be paid @ 5 rupees per sqr-feet" reuired="">
+        <td><input type="text" class="form-control" name= "amtcalc" id="confirmpassword" placeholder="amount to be paid @ 5 rupees per sqr-feet" reuired="">
  </tr>
+  <tr>
+
+        <td><h4>Create UserName:</h4></td>
+        <td><input type="text" class="form-control" name= "username" id="" placeholder="create username" reuired="">
+ </tr>
+ <tr>
+        <td><h4>Create Password:</h4></td>
+        <td><input type="text" class="form-control" name= "password" id="" placeholder="create password" reuired="">
+ </tr>
+
     </tbody>
   </table>                                       
 <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
@@ -68,6 +80,7 @@ if (!isset($_SESSION['username']))
 </div>
 </div>
 </div></div>
+</form>
 
-</html>
 </body>
+</html>
