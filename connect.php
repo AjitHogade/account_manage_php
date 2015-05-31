@@ -8,7 +8,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "personal_record";
+$db = "personal_records";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
