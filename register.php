@@ -33,7 +33,7 @@ session_start();
     </thead>
     <tbody>
       <tr>
-        <td><h4>Name:</h4></td>
+        <td style="width:35%"><h4>Name:</h4></td>
         <td><input type="text" class = "form-control" name= "name" id="name" placeholder="Name" value = '<?php if(isset($_SESSION["input"]['name'])) {echo $_SESSION['input']['name']; }else{echo "";} ?>'>
     <?php if(isset($_SESSION["error"]['name'])) {echo $_SESSION['error']['name'] ;}?></td>
       </tr>

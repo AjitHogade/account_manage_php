@@ -58,7 +58,7 @@ if (!isset($_SESSION['username']))
     </div>
  </tr>
   <tr>
-        <td><h4>Maitainance-Amount:</h4></td>
+        <td><h4>Maintainance-Amount:</h4></td>
         <td><input type="text" class="form-control" name= "confirmPassword" id="confirmpassword" placeholder="amount to be paid @ 5 rupees per sqr-feet" reuired="">
  </tr>
     </tbody>
