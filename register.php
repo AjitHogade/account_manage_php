@@ -57,7 +57,8 @@ session_start();
 <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
  <br>
  
-</div></div><div class = "panel panel-success"><?php if(isset($_SESSION["success"])) {echo $_SESSION['success'];}?></div></div></div></div>
+</div></div><div class = "panel panel-success"><?php if(isset($_SESSION["success"])) {echo $_SESSION['success'];}?>
+              <div class = "panel panel-success"><?php if(isset($_SESSION["Emailerr"])) {echo $_SESSION['Emailerr'];}?></div></div></div></div>
 <?php session_destroy(); ?>
 </form>
 </body>

@@ -8,14 +8,15 @@
 
 session_start();
 
-$user=$_REQUEST["name"];
-$usernm=$_REQUEST["Username"];
-$passwr=$_REQUEST["Password"];
-$cpasswr=$_REQUEST["confirmPassword"];
+$user=$_REQUEST["Membername"];
+$usernm=$_REQUEST["Roomnumber"];
+$passwr=$_REQUEST["Date of birth"];
+$cpasswr=$_REQUEST["Flatarea"];
+$cpasswrr=$_REQUEST["Maintainencecalculated"];
+
 $input = array();
 $error = array();
 $success = "User has been Registered successfully";
-$emailerr="Email already used.";
 
 if(empty($user)){
 $error['name'] = "Your Name must not be empty<br>";
@@ -40,10 +41,10 @@ if(empty($cpasswr)){
 $error['confirmPassword'] = "Renter password<br>";
 }
 
-if($passwr != $cpasswr){
-$error['cpass'] = "Should match with Password<br>";
-}
 
+if(empty($cpasswrr)){
+$error['confirmPassword'] = "Renter password<br>";
+}
 
 
 if($error == 0 || $error == null){
@@ -51,34 +52,22 @@ if($error == 0 || $error == null){
 
 include("connect.php");
 
-	$hash=md5($passwr);
-$sql = "INSERT INTO users (fname, username, password)
-VALUES ('$user','$usernm','$hash')";
+	
+$sql = "INSERT INTO addmembers (membername, roomnumber, dateofbirth, flatarea, maintainencecalculated)
+VALUES ('$user','$usernm','$passwr','$cpasswr','$cpasswrr')";
 echo "New record created successfully";
-$query = mysql_query("SELECT * FROM users Where username='$usernm'");
-$query_row=mysql_fetch_array($query);
-
-if($query_row == NULL)
-{
-    mysql_query($sql);
-       $_SESSION["Emailerr"] = $emailerr;
-
-    header( 'location: register.php');
-}
- 
- if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE) {
    // echo "New record created successfully";
    $_SESSION["success"] = $success;
-  header("location:register.php");
+  header("location:registeration.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 }
 else{
-
     $_SESSION["input"] = $input;
     $_SESSION["error"]=$error;
-header("location:register.php");
+header("location:registeration.php");
     
 }
 ?>
