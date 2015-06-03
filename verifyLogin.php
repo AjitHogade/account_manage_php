@@ -18,10 +18,10 @@ $pass = $_REQUEST["password"];
 $hash= md5($pass);
 $error ="user invalid";
 
-$sql="SELECT * FROM users WHERE user_name ='$user' and password = '$hash'";
+$sql="SELECT * FROM users WHERE username ='$user' and password = '$hash'";
 $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 
-
+echo $result;
 if ($result->num_rows == true)
 {
 $row = $result->fetch_array();
@@ -31,18 +31,21 @@ else
 	$row = false;
 }
 
-if($row == true)
+/*if($row == true)
 {
 	$_SESSION['username'] = $user ;
 	echo "Login succesfull. Please wait.......Redirecting to home page";
-   	header('refresh:2;url=welcome.php'); 
+   	header('location:welcome.php'); 
 
 }
 else{
-         $_SESSION['error'] = $hash;
+
+         $_SESSION['error'] = $user;
          header('location:login.php');
-	//echo "invalid User-name or Password";
-}
+         		echo "invalid User-name or Password";
+
+}*/
+
 }
 
 

@@ -55,16 +55,7 @@ include("connect.php");
 $sql = "INSERT INTO users (fname, username, password)
 VALUES ('$user','$usernm','$hash')";
 echo "New record created successfully";
-$query = mysql_query("SELECT * FROM users Where username='$usernm'");
-$query_row=mysql_fetch_array($query);
 
-if($query_row == NULL)
-{
-    mysql_query($sql);
-       $_SESSION["Emailerr"] = $emailerr;
-
-    header( 'location: register.php');
-}
  
  if ($conn->query($sql) === TRUE) {
    // echo "New record created successfully";

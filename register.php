@@ -58,7 +58,7 @@ session_start();
  <br>
  
 </div></div><div class = "panel panel-success"><?php if(isset($_SESSION["success"])) {echo $_SESSION['success'];}?>
-              <div class = "panel panel-success"><?php if(isset($_SESSION["Emailerr"])) {echo $_SESSION['Emailerr'];}?></div></div></div></div>
+              </div></div></div></div>
 <?php session_destroy(); ?>
 </form>
 </body>
