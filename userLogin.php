@@ -23,7 +23,7 @@
   		<div class="panel-heading">Member-Login</div>
   			<div class="panel-body">    
       			<div  class="form">
-    		<form id="contactform" form name ="login" form action = "verifyLogin.php" onsubmit = "return Validate()" method = "post">
+    		<form id="contactform" form name ="login" form action = "memberverify.php" onsubmit = "return Validate()" method = "post">
      <table class="table">
     <thead>
       <tr>
@@ -33,7 +33,7 @@
     <tbody>
       <tr>
         <td style="width:25%"></span><h4>Username:</h4></td>
-        <td><input type="text" class = "form-control" name= "name" id="name" placeholder="UserName"></td>
+        <td><input type="text" class = "form-control" name= "username" id="name" placeholder="UserName"></td>
       </tr>
        <tr>
         <td style="width:20%"><h4>Password:</h4></td>
