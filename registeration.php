@@ -62,8 +62,8 @@ var num1 = document.myform.Flatarea.value;
                       <div class="input-group input-group">
                             <span class="input-group-addon" id="sizing-addon1">Maintainence Calculated&nbsp;&nbsp;&nbsp;</span>
           
-<input type="text" class="form-control" name= "Maintainencecalculated" id="MaintainenceCalculated" placeholder="Click on Calculate button" value = '<?php if(isset($_SESSION["input"]['Maintainencecalculated'])) {echo $_SESSION['input']['Maintainencecalculated']; }else{echo "";} ?>'>  
- <?php if(isset($_SESSION["error"]['Maintainencecalculated'])) {echo $_SESSION['error']['Maintainencecalculated'] ;}?></div>
+<input type="text" class="form-control" name= "Maintainencecalculated" id="MaintainenceCalculated" placeholder="Click on Calculate button" value =  >  
+ </div>
 
  <br>
 <button type="submit" class="btn btn-primary pull-right" name="submit">Save</button>

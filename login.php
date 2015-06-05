@@ -26,7 +26,7 @@
   <div class="panel-heading">Login</div>
   <div class="panel-body">    
       <div  class="form">
-    		<form id="contactform" form name ="login" form action = "verifyLogin.php" onsubmit = "return Validate()" method = "post"> 
+    		<form id="contactform" form name ="login" form action = "verifyLogin.php"  method = "post"> 
           
           <div class="input-group input-group">
   <span class="input-group-addon" id="sizing-addon1">User-Name</span>
@@ -36,7 +36,7 @@
     	
               <div class="input-group input-group">
   <span class="input-group-addon" id="sizing-addon1">Password</span> 
-    			<input type="password"  class="form-control" id="password" name="password" required=""> 
+    			<input type="password"  class="form-control" id="password" name="password" > 
         </div><br>
 <a href= "#">Forgot Password?</a>
                <input class="btn btn-primary pull-right" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit"> 	 

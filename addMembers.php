@@ -9,6 +9,9 @@ if (!isset($_SESSION['username']))
 <head>
 <?php include("header.php");?>
 </head>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
 <body>
 
 <div class="container">
@@ -53,25 +56,35 @@ if (!isset($_SESSION['username']))
   <tr>
         <td><h4>Flat-Area(Sqr-Feet):</h4></td>
         <td><div class="input-group">
-      <input type="text" class="form-control" name="flatarea" placeholder="flat area">
-      <span class="input-group-btn">
-        <button class="btn btn-success" type="button">Calculate-Amount</button>
-      </span>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+
+      <input type="text" class="form-control" ng-model="Flatarea" name="flatarea" placeholder="flat area"><br>
+       Maintainence Calculated: {{mtcal()}}
+      <input type="hidden" class="form-control" name="calc" value={{mtcal()}} />
     </div>
+    <script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.Flatarea ="0";
+    
+    $scope.mtcal = function() {
+        var a = $scope.Flatarea;
+return (parseInt(a)*2);
+    }
+});
+</script>
+
+
+
  </tr>
-  <tr>
-        <td><h4>Maitainance-Amount:</h4></td>
-        <td><input type="text" class="form-control" name= "amtcalc" id="confirmpassword" placeholder="amount to be paid @ 5 rupees per sqr-feet" reuired="">
- </tr>
+  
   <tr>
 
         <td><h4>Create UserName:</h4></td>
         <td><input type="text" class="form-control" name= "username" id="" placeholder="create username" reuired="">
  </tr>
- <tr>
-        <td><h4>Create Password:</h4></td>
-        <td><input type="text" class="form-control" name= "password" id="" placeholder="create password" reuired="">
- </tr>
+ 
 
     </tbody>
   </table>                                       
