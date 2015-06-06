@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> b75cd053f47072bfbad28385ea374fa7046c7539
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" media="all" />
@@ -30,4 +34,8 @@
      
     </ul>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b75cd053f47072bfbad28385ea374fa7046c7539

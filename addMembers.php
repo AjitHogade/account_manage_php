@@ -24,6 +24,7 @@ if (!isset($_SESSION['username']))
 <div class="panel panel-default" style = "min-height:75%">    
       <h3><center>Register New Member</center></h3>
       <div class = "panel panel-default" style="margin-right:15px;margin-left:15px">
+
         <form method="post" action="memberAddition.php">
        <table class="table">
     <thead>
@@ -52,7 +53,7 @@ if (!isset($_SESSION['username']))
   <tr>
         <td><h4>Mobile-No:</h4></td>
         <td><input type="text" class="form-control" name= "mobileno" id="confirmpassword" placeholder="mobile number" reuired="" value="+91">
- </tr>
+</tr>
   <tr>
         <td><h4>Flat-Area(Sqr-Feet):</h4></td>
         <td><div class="input-group">
@@ -96,6 +97,8 @@ return (parseInt(a)*2);
  </tr>
  
 
+      
+  
     </tbody>
   </table>                                       
 <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>

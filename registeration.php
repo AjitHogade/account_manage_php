@@ -6,7 +6,7 @@
    
 function add(){
 var num1 = document.myform.Flatarea.value;
-             var sum = parseInt(num1) * 5 ;
+             var sum = parseInt(num1) * 1.5 ;
              document.getElementById('MaintainenceCalculated').value = sum;
 }
   </script>

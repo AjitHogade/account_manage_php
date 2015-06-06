@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
 
-<title>Verfication</title>
-
-</head>
-<body>
 <?php
 session_start();
 include("connect.php");
@@ -18,17 +12,17 @@ $hash= md5($pass);
 $error ="user invalid";
 $sql="SELECT  FROM users WHERE username ='$user'and password = '$hash'";
 $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-echo $sql;
+
 if ($result->num_rows == true)
 {
-$res = $result->fetch_array();
+$row = $result->fetch_array();
 }
 else
 {
-	$res = false;
+	$row = true;
 }
 
-if($res == true)
+if($row == true)
 {
 	$_SESSION['username'] = $user ;
 	//echo "Login succesfull. Please wait.......Redirecting to home page";
