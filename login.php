@@ -43,8 +43,9 @@
    </form> 
  </div>
  </div>
+
 </div>
-<?php if(isset($_SESSION['error'])) {echo $_SESSION['error'];}    ?>
+<?php if(isset($_SESSION["error"])) {echo $_SESSION['error'];}    ?>
 </div>      
 </div>
  <!--<?php //include("footer.php") ?>--> 

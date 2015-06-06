@@ -1,0 +1,28 @@
+diff a/verifyLogin.php b/verifyLogin.php	(rejected hunks)
+@@ -31,18 +31,21 @@
+ 	$row = false;
+ }
+ 
+-if($row == true)
++/*if($row == true)
+ {
+ 	$_SESSION['username'] = $user ;
+ 	echo "Login succesfull. Please wait.......Redirecting to home page";
+-   	header('refresh:2;url=welcome.php'); 
++   	header('location:welcome.php'); 
+ 
+ }
+ else{
+-         $_SESSION['error'] = $hash;
++
++         $_SESSION['error'] = $user;
+          header('location:login.php');
+-	//echo "invalid User-name or Password";
+-}
++         		echo "invalid User-name or Password";
++
++}*/
++
+ }
+ 
+ 

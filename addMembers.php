@@ -60,18 +60,28 @@ if (!isset($_SESSION['username']))
 <div ng-app="myApp" ng-controller="personCtrl">
 
       <input type="text" class="form-control" ng-model="Flatarea" name="flatarea" placeholder="flat area"><br>
-       Maintainence Calculated: {{mtcal()}}
-      <input type="hidden" class="form-control" name="calc" value={{mtcal()}} />
+           Maintainence Calculated: {{mtcal()}}
+
+      <input type="hidden" class="form-control" id="calc" name="calc" value={{mtcal()}} />
+    <script type="text/javascript">
+       if(isNaN({{mtcal}})){return 0; }
+       else{return {{mtcal()}}; }
+
+      </script>
     </div>
     <script>
 var app = angular.module('myApp', []);
 app.controller('personCtrl', function($scope) {
-    $scope.Flatarea ="0";
-    
+
+  //  $scope.Flatarea =0;
+   
     $scope.mtcal = function() {
         var a = $scope.Flatarea;
+        if($scope.Flatarea == null){ a = a+0;}
+        else{
 return (parseInt(a)*2);
     }
+ }
 });
 </script>
 
