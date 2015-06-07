@@ -13,10 +13,10 @@ $email=$_REQUEST["emailadd"];
 $flatnum=$_REQUEST["flatno"];
 $wing=$_REQUEST["wing"];
 $mobilenum=$_REQUEST["mobileno"];
-$flatarea=$_REQUEST["flatarea"];
-$calc=$_REQUEST["amtcalc"];
+$flatarea=$_REQUEST["area"];
+$calc=$_REQUEST["amount"];
 $usernm=$_REQUEST["username"];
-$pass=$_REQUEST["password"];
+//$pass=$_REQUEST["password"];
 
 $input = array();
 $error = array();
@@ -98,13 +98,13 @@ header("location:addMembers.php");
 include("connect.php");
 
   
-$sql = "INSERT INTO addmembers (name, email, flat_no, wing, mobile_no, flatarea, amt_calculated, create_usernm, create_password)
-VALUES ('$fullnm','$email','$flatnum','$wing','$mobilenum', '$flatarea','$calc', '$usernm', '$pass')";
+$sql = "INSERT INTO members (fname, email, flat_no, wing, mobile_no, flat_area, amt_calculated, username)
+VALUES ('$fullnm','$email','$flatnum','$wing','$mobilenum', '$flatarea','$calc', '$usernm')";
 //echo "New record created successfully";
 if ($conn->query($sql) === TRUE) {
-   // echo "New record created successfully";
+   echo "New record created successfully";
    $_SESSION["success"] = $success;
-   echo $sql;
+  // echo $sql;
  // header("location:addMembers.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
