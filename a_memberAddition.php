@@ -82,8 +82,8 @@ header("location:addMembers.php");
 ?>*/
 include("connect.php");
   
-$sql = "INSERT INTO addmembers (name, usernm, password, email, flat_no, wing, mobile_no, flat_area, amt_calculated)
-VALUES ('$fullnm','$usernm','$password','$email','$flatnum', '$wing','$mobilenum', '$flatarea', '$calc')";
+$sql = "INSERT INTO members (name, usernm, email, flat_no, wing, mobile_no, flat_area, amt_calculated)
+VALUES ('$fullnm','$usernm','$email','$flatnum', '$wing','$mobilenum', '$flatarea', '$calc')";
 //echo "New record created successfully";
 if ($conn->query($sql) === TRUE) {
    // echo "New record created successfully";

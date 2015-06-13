@@ -10,7 +10,7 @@ $pass = $_REQUEST["password"];
 //$hash= md5($pass);
 $error ="user invalid";
 
-$sql="SELECT * FROM member WHERE username ='$user' and password = '$pass'";
+$sql="SELECT * FROM members WHERE username ='$user' and password = '$pass'";
 $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
 
 

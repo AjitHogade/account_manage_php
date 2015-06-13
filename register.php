@@ -12,7 +12,7 @@ session_start();
             <div style = "color:white;padding:10px">
                 <h3>Personal-Records<h3></div>
             <div style = "color:white;margin-top:-40px;margin-right:10px;float:right">
-                <a href="login.php" style="color:white">Login</a></div></nav>
+                <a href="m_memberLogin.php" style="color:white">Login</a></div></nav>
 </header></br>
 <form name="contact form" method="post" action="addUser.php">
 

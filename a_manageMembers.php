@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']))
 ?>
 <html>
 <head>
-<?php include("header.php");?>
+<?php include("a_header.php");?>
 </head>
 <body>
 
@@ -16,7 +16,7 @@ if (!isset($_SESSION['username']))
          <div class="col-xs-9 col-md-offset-1">
                   <?php $isActive = array(0,0,0,1);?> 
 
-        <?php include("tab.php"); ?>
+        <?php include("a_tab.php"); ?>
          
 <div class="panel panel-default" style = "min-height:75%">    
   <h3>ManageMember</h3>

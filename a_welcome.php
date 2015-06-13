@@ -4,7 +4,7 @@ if (!isset($_SESSION['username']))
 {
   header('Location:login.php');
 }
-include("header.php");
+include("a_header.php");
 ?>
 <html>
 <head>
@@ -16,7 +16,7 @@ include("header.php");
          <div class="col-xs-9 col-md-offset-1">
                   <?php $isActive = array(1,0,0,0);?> 
 
-        <?php include("tab.php"); ?>
+        <?php include("a_tab.php"); ?>
          
 <div class="panel panel-default" style = "min-height:75%">    
          

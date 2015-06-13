@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']))
 ?>
 <html>
 <head>
-<?php include("header.php");?>
+<?php include("a_header.php");?>
 </head>
 
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -19,7 +19,7 @@ if (!isset($_SESSION['username']))
          <div class="col-xs-9 col-md-offset-1">
                   <?php $isActive = array(0,0,1,0);?> 
 
-        <?php include("tab.php"); ?>
+        <?php include("a_tab.php"); ?>
          
 <div class="panel panel-default" style = "min-height:75%">    
       <h3><center>Register New Member</center></h3>
@@ -32,9 +32,7 @@ if (!isset($_SESSION['username']))
       </tr>
     </thead>
     <tbody>
-
-      
-      <tr>
+ <tr>
         <td style="width:25%"><h4>Full-Name:</h4></td>
         <td><input type="text" class = "form-control" name= "fullname" id="name" placeholder="full name">
    </tr>
@@ -52,7 +50,7 @@ if (!isset($_SESSION['username']))
  </tr>
   <tr>
         <td><h4>Mobile-No:</h4></td>
-        <td><input type="text" class="form-control" name= "mobileno" id="confirmpassword" placeholder="mobile number" reuired="" value="+91">
+        <td><input type="text" class="form-control" name= "mobileno" id="" placeholder="mobile number" reuired="" value="+91">
 </tr>
   <tr>
         <td><h4>Flat-Area(Sqr-Feet):</h4></td>
@@ -64,12 +62,9 @@ if (!isset($_SESSION['username']))
            Maintainence Calculated: {{mtcal()}}
 
       <input type="hidden" class="form-control" id="calc" name="calc" value={{mtcal()}} />
-    <script type="text/javascript">
-       if(isNaN({{mtcal}})){return 0; }
-       else{return {{mtcal()}}; }
-
-      </script>
-    </div>
+   
+       
+    
     <script>
 var app = angular.module('myApp', []);
 app.controller('personCtrl', function($scope) {
@@ -78,28 +73,22 @@ app.controller('personCtrl', function($scope) {
    
     $scope.mtcal = function() {
         var a = $scope.Flatarea;
-        if($scope.Flatarea == null){ a = a+0;}
+        if($scope.Flatarea == null){ a = a||0;}
         else{
 return (parseInt(a)*2);
     }
  }
 });
 </script>
-
-
-
- </tr>
+</div>
+</tr>
   
   <tr>
 
         <td><h4>Create UserName:</h4></td>
         <td><input type="text" class="form-control" name= "username" id="" placeholder="create username" reuired="">
  </tr>
- 
-
-      
-  
-    </tbody>
+  </tbody>
   </table>                                       
 <button type="submit" class="btn btn-primary pull-right" name="submit">Submit</button>
  <br><br>

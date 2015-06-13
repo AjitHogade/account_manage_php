@@ -16,7 +16,7 @@
           <div style = "color:white;padding:10px">
 				<h3>Personal-Records<h3></div>
                     <div style = "color:white;margin-top:-40px;margin-right:10px;float:right">
-                        <a href="userLogin.php" style="color:white">Member-Login</a></div></nav>
+                        <a href="m_memberLogin.php" style="color:white">Member-Login</a></div></nav>
             </header> <br><br>
             <div class="container">
             <div class="row">

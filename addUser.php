@@ -52,7 +52,7 @@ if($error == 0 || $error == null){
 include("connect.php");
 
 	$hash=md5($passwr);
-$sql = "INSERT INTO users (fname, username, password)
+$sql = "INSERT INTO admin (fname, username, password)
 VALUES ('$user','$usernm','$hash')";
 echo "New record created successfully";
 

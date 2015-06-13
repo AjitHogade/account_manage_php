@@ -21,7 +21,7 @@ var num1 = document.myform.Flatarea.value;
             <div style = "color:white;margin-top:-40px;margin-right:10px;float:right">
                 <a href="login.php">Login</a></div></nav>
 </header></br>
-<form name="myform" method="post" action="memberAddition.php">
+<form name="myform" method="post" action="a_memberAddition.php">
 
     <div class="container">
         <div class="row">
