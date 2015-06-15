@@ -25,7 +25,7 @@ if (!isset($_SESSION['username']))
      // fetch data from the database
      // $sql = "SELECT * from members";
      // $result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
-     // $row = $result->fetch_array();
+     // $row = $result->fetch_araaray();
 ?>
 
 
@@ -53,7 +53,7 @@ if (!isset($_SESSION['username']))
                 foreach ($projects as $project){
 
       ?>
-        <tr data-href="m_memberDetails.php" style="cursor: pointer;">
+        <tr data-href="m_memberDetails.php?id=<?php echo $project['id'];?>"  style="cursor: pointer;">
             <td><?php echo $project['fname']; ?></td>
             <td><?php echo $project['email']; ?></td>
             <td><?php echo $project['mobile_no']; ?></td>
@@ -66,20 +66,6 @@ if (!isset($_SESSION['username']))
 
     </tbody>        
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 </div></div>

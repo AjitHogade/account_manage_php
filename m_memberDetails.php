@@ -21,7 +21,22 @@ if (!isset($_SESSION['username']))
 <div class="panel panel-default" style = "min-height:75%">    
  <h3><center>All Members</center></h3>
 <?php
-  echo "here will be all details of the member";
+  $id = $_GET['id'];
+  include("includes/connect.php");
+ $sql = "SELECT * FROM members WHERE id = '$id'";
+   $result = $conn->query($sql);
+   $result->num_rows;
+ // $row = $result->fetch_assoc();
+  // echo "" . $row["s_id"]. "." . $row["ques"]. "<br>";
+   $projects = array();
+   while($member = $result->fetch_assoc()){
+   $details[]= $member;
+ }
+         foreach ($details as $detail){
+          echo $detail['fname'];
+        }
+
+      
 ?>
 
 
