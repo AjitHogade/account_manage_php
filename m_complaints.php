@@ -1,11 +1,11 @@
 <?php
 include("includes/connect.php");
-$user = "0";
+$user = $_REQUEST["user"];
 $subject=$_REQUEST["subject"];
 $content = $_REQUEST["content"];
 
 
-$order = "INSERT INTO complaints (user_id, subject, description)VALUES   ('$user' ,'$subject',  '$content')";
+$order = "INSERT INTO complaints (user_name, subject, description)VALUES   ('$user' ,'$subject',  '$content')";
  
 
 

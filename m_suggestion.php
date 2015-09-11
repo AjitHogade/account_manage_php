@@ -50,7 +50,7 @@ include ("includes/m_header.php");
                     <div class="panel-heading"><h4><b>Kindly enter your suggestions.</b></h4>
                     Please send us your suggestions. Your suggestions will be appreciated. </div> 
 					   <div class="panel-body">
-    				        <h4 >Subject:</h4><input type="text" class = "form-control" name= "subject" id="subject" placeholder="subject">
+    				        <h4 >Subject:</h4><input type="text" class = "form-control" name= "subject" id="subject" placeholder="subject" required="">
 					        <h4 >Your Suggestions:</h4><textarea name="content" style="width:100%"></textarea><br>
 					        <button type="submit" class="btn btn-success pull-right" name="submit">Send Suggestion</button>
                         </div>	
