@@ -15,7 +15,6 @@ $cpasswr=$_REQUEST["confirmPassword"];
 $input = array();
 $error = array();
 $success = "User has been Registered successfully";
-$emailerr="Email already used.";
 
 if(empty($user)){
 $error['name'] = "Your Name must not be empty<br>";
@@ -52,24 +51,15 @@ if($error == 0 || $error == null){
 include("includes/connect.php");
 
 	$hash=md5($passwr);
-$sql = "INSERT INTO users (fname, username, password)
+$sql = "INSERT INTO users (fname, user_name, password)
 VALUES ('$user','$usernm','$hash')";
 echo "New record created successfully";
-$query = mysql_query("SELECT * FROM users Where username='$usernm'");
-$query_row=mysql_fetch_array($query);
 
-if($query_row == NULL)
-{
-    mysql_query($sql);
-       $_SESSION["Emailerr"] = $emailerr;
-
-    header( 'location: register.php');
-}
  
  if ($conn->query($sql) === TRUE) {
    // echo "New record created successfully";
    $_SESSION["success"] = $success;
-  header("location:register.php");
+  header("location:a_register.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -78,7 +68,7 @@ else{
 
     $_SESSION["input"] = $input;
     $_SESSION["error"]=$error;
-header("location:register.php");
+header("location:a_register.php");
     
 }
 ?>

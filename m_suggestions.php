@@ -5,7 +5,7 @@ $subject=$_REQUEST["subject"];
 $content = $_REQUEST["content"];
 
 
-$order = "INSERT INTO complaints (user_id, subject, description)VALUES   ('$user' ,'$subject',  '$content')";
+$order = "INSERT INTO suggestions (user_id, c_sub, c_body)VALUES   ('$user' ,'$subject',  '$content')";
  
 
 

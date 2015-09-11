@@ -48,7 +48,7 @@
          		</div>  
   			</div>
 </div>
-        <div style="color:red"><h4>Logging In first time? Click <a href="verifyUserName.php">HERE </a>to create PASSWORD</h4></div>
+        <div style="color:red"><h4>Logging For first time? Click <a href="verifyUserName.php">HERE </a>to create PASSWORD</h4></div>
 
 </div>
 </div>

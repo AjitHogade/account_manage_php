@@ -34,7 +34,9 @@ else
 if($row == true)
 {
 	$_SESSION['username'] = $user ;
-	echo "Login succesfull. Please wait.......Redirecting to home page";
+	include('redirect.php');
+	
+	echo "Login successfull. Please wait.......Redirecting to home page";
    	header('refresh:2;url=a_desktop.php'); 
 
 }

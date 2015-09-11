@@ -7,14 +7,14 @@ session_start();
     </head>
 <body>
 <header>
-    <div class="container-fluid">
+    
         <nav class="navbar navbar-inverse">
             <div style = "color:white;padding:10px">
                 <h3>Personal-Records<h3></div>
             <div style = "color:white;margin-top:-40px;margin-right:10px;float:right">
-                <a href="login.php" style="color:white">Login</a></div></nav>
+                <a href="adminLogin.php" style="color:white">Login</a></div></nav>
 </header></br>
-<form name="contact form" method="post" action="addUser.php">
+<form name="contact form" method="post" action="a_addUser.php">
 
     <div class="container">
         <div class="row">

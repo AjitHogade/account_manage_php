@@ -17,7 +17,7 @@ if($pass != $cPass){
  if ($conn->query($sql) === TRUE) {
    // echo "New record created successfully";
    $_SESSION["success"] = $success;
-  header("location:register.php");
+  header("location:memberLogin.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
